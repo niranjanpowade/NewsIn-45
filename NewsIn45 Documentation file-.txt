@@ -1,0 +1,7 @@
+NewsIn45 Documentation file-
+
+Install Node.js and npm
+Install Expo CLI - npm install -g expo-cli
+Create a New Expo Project - expo init NewsIn45
+Navigate to the Project Director - cd NewsIn45
+
