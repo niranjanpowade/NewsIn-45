@@ -73,7 +73,7 @@ export default function App() {
           style={{
             borderBottomWidth: 1,
             borderColor: "lightgray",
-            padding: 10,
+            padding: 12,
           }}
         >
           <Text style={{ fontSize: 18, fontWeight: "bold" }}>
