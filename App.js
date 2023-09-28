@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text, Image } from "react-native";
 import Menu from "./src/Menu";
 import NewsDetail from "./src/NewsDetail";
 
@@ -15,6 +15,24 @@ const newsData = [
     id: 2,
     title: "News Title 2",
     description: "News Description 2",
+    image: "https://example.com/image2.jpg",
+  },
+  {
+    id: 3,
+    title: "News Title 3",
+    description: "News Description 3",
+    image: "https://example.com/image2.jpg",
+  },
+  {
+    id: 4,
+    title: "News Title 4",
+    description: "News Description 4",
+    image: "https://example.com/image2.jpg",
+  },
+  {
+    id: 5,
+    title: "News Title 5",
+    description: "News Description 5",
     image: "https://example.com/image2.jpg",
   },
 ];
@@ -66,7 +84,7 @@ export default function App() {
       </View>
 
       {/* List of News Items */}
-      {newsData.map((newsItem) => (
+      {/* {newsData.map((newsItem) => (
         <TouchableOpacity
           key={newsItem.id}
           onPress={() => openNewsDetail(newsItem)}
@@ -80,6 +98,30 @@ export default function App() {
             {newsItem.title}
           </Text>
           <Text>{newsItem.description}</Text>
+        </TouchableOpacity>
+      ))} */}
+      {newsData.map((newsItem) => (
+        <TouchableOpacity
+          key={newsItem.id}
+          onPress={() => openNewsDetail(newsItem)}
+          style={{
+            borderBottomWidth: 1,
+            borderColor: "lightgray",
+            padding: 12,
+            flexDirection: "row", // Added to align image and text horizontally
+            alignItems: "center", // Added to vertically center content
+          }}
+        >
+          <Image
+            source={{ uri: newsItem.image }} // Provide the image URI here
+            style={{ width: 80, height: 80, marginRight: 12 }} // Adjust width, height, and margin as needed
+          />
+          <View>
+            <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+              {newsItem.title}
+            </Text>
+            <Text>{newsItem.description}</Text>
+          </View>
         </TouchableOpacity>
       ))}
 
