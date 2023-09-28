@@ -108,15 +108,23 @@ export default function App() {
             borderBottomWidth: 1,
             borderColor: "lightgray",
             padding: 12,
-            flexDirection: "row", // Added to align image and text horizontally
-            alignItems: "center", // Added to vertically center content
           }}
         >
-          <Image
-            source={{ uri: newsItem.image }} // Provide the image URI here
-            style={{ width: 80, height: 80, marginRight: 12 }} // Adjust width, height, and margin as needed
-          />
-          <View>
+          <View
+            style={{
+              flexDirection: "column", // Stack image and description vertically
+              alignItems: "center", // Center content horizontally
+            }}
+          >
+            <Image
+              source={{ uri: newsItem.image }}
+              style={{
+                width: 200, // Adjust image width as needed
+                height: 150, // Adjust image height as needed
+                marginBottom: 12, // Add some spacing between image and description
+                borderRadius: 10, // Add border radius for card-like appearance
+              }}
+            />
             <Text style={{ fontSize: 18, fontWeight: "bold" }}>
               {newsItem.title}
             </Text>
