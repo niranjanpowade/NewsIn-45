@@ -7,9 +7,10 @@ const newsData = [
   // Example data for testing
   {
     id: 1,
-    title: "News Title 1",
-    description: "News Description 1",
-    image: "https://example.com/image1.jpg",
+    title: "Spanish nightclub fire death toll to 11: police",
+    description:
+      "At least eleven people have been killed in a fire in a nightclub in Murcia in southeast Spain, the mayor said, adding that rescuers were still searching for people unaccounted for after the blaze. The fire broke out in the early hours of Sunday in Teatre nightclub in Atalayas, on the outskirts of the city, emergency services said on social media platform X. Footage released on the X account of Murcia's fire service showed firefighters working to control flames inside the nightclub. The fire had destroyed part of the roof, the footage showed.",
+    image: "./assets/spanishnews.png",
   },
   {
     id: 2,
