@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, TouchableOpacity, Text, Image, ScrollView } from "react-native";
 import Menu from "./src/Menu";
 import NewsDetail from "./src/NewsDetail";
+import { ImagesAssets } from "./assets/imagesAssets";
 
 const newsData = [
   // Example data for testing
@@ -10,7 +11,7 @@ const newsData = [
     title: "Spanish nightclub fire death toll to 11: police",
     description:
       "At least eleven people have been killed in a fire in a nightclub in Murcia in southeast Spain, the mayor said, adding that rescuers were still searching for people unaccounted for after the blaze. The fire broke out in the early hours of Sunday in Teatre nightclub in Atalayas, on the outskirts of the city, emergency services said on social media platform X. Footage released on the X account of Murcia's fire service showed firefighters working to control flames inside the nightclub. The fire had destroyed part of the roof, the footage showed.",
-    image: "./assets/spanishnews.png",
+    image: ImagesAssets[1],
   },
   {
     id: 2,
@@ -102,38 +103,41 @@ export default function App() {
           <Text>{newsItem.description}</Text>
         </TouchableOpacity>
       ))} */}
-        {newsData.map((newsItem) => (
-          <TouchableOpacity
-            key={newsItem.id}
-            onPress={() => openNewsDetail(newsItem)}
-            style={{
-              borderBottomWidth: 1,
-              borderColor: "lightgray",
-              padding: 12,
-            }}
-          >
-            <View
+        {newsData.map((newsItem, index) => {
+          return (
+            <TouchableOpacity
+              key={newsItem.id}
+              onPress={() => openNewsDetail(newsItem)}
               style={{
-                flexDirection: "column", // Stack image and description vertically
-                alignItems: "center", // Center content horizontally
+                borderBottomWidth: 1,
+                borderColor: "lightgray",
+                padding: 12,
               }}
             >
-              <Image
-                source={{ uri: newsItem.image }}
+              <View
                 style={{
-                  width: 200, // Adjust image width as needed
-                  height: 150, // Adjust image height as needed
-                  marginBottom: 12, // Add some spacing between image and description
-                  borderRadius: 10, // Add border radius for card-like appearance
+                  flexDirection: "column", // Stack image and description vertically
+                  alignItems: "center", // Center content horizontally
                 }}
-              />
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                {newsItem.title}
-              </Text>
-              <Text>{newsItem.description}</Text>
-            </View>
-          </TouchableOpacity>
-        ))}
+              >
+                <Image
+                  // source={require(`${profileImage}`)}
+                  source={newsItem.image}
+                  style={{
+                    width: 200, // Adjust image width as needed
+                    height: 150, // Adjust image height as needed
+                    marginBottom: 12, // Add some spacing between image and description
+                    borderRadius: 10, // Add border radius for card-like appearance
+                  }}
+                />
+                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                  {newsItem.title}
+                </Text>
+                <Text>{newsItem.description}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        })}
 
         {/* Menu Component */}
         <Menu isVisible={isMenuVisible} onClose={toggleMenu} />
