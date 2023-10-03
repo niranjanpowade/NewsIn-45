@@ -86,23 +86,6 @@ export default function App() {
           </View>
         </View>
 
-        {/* List of News Items */}
-        {/* {newsData.map((newsItem) => (
-        <TouchableOpacity
-          key={newsItem.id}
-          onPress={() => openNewsDetail(newsItem)}
-          style={{
-            borderBottomWidth: 1,
-            borderColor: "lightgray",
-            padding: 12,
-          }}
-        >
-          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-            {newsItem.title}
-          </Text>
-          <Text>{newsItem.description}</Text>
-        </TouchableOpacity>
-      ))} */}
         {newsData.map((newsItem, index) => {
           return (
             <TouchableOpacity
@@ -138,6 +121,24 @@ export default function App() {
             </TouchableOpacity>
           );
         })}
+
+        {/* List of News Items */}
+        {/* {newsData.map((newsItem) => (
+        <TouchableOpacity
+          key={newsItem.id}
+          onPress={() => openNewsDetail(newsItem)}
+          style={{
+            borderBottomWidth: 1,
+            borderColor: "lightgray",
+            padding: 12,
+          }}
+        >
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+            {newsItem.title}
+          </Text>
+          <Text>{newsItem.description}</Text>
+        </TouchableOpacity>
+      ))} */}
 
         {/* Menu Component */}
         <Menu isVisible={isMenuVisible} onClose={toggleMenu} />
